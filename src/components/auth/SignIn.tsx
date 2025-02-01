@@ -27,7 +27,7 @@ const SignIn: React.FC = () => {
       style={{
         backgroundImage: `url(${bgimage})`,
       }}
-      className="flex items-center justify-center bg-center bg-cover bg-no-repeat bg-fixed bg-opacity-70 bg-black  bg-blend-multiply h-screen w-screen"
+      className="flex items-center justify-center bg-center bg-cover bg-no-repeat bg-fixed bg-opacity-70 bg-black bg-blend-multiply h-screen w-screen"
     >
       <div className="bg-white p-8 w-[400px] rounded-lg shadow-lg">
         <h1 className="text-2xl mb-6">Вход</h1>

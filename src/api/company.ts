@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Company } from "../types";
 
-const API_URL = "http://45.138.158.137:92/api"; // Replace with your API URL
+const API_URL = "http://45.138.158.137:92/api"; // Change back to http
 
 export const companyApi = {
   getCompanies: async () => {
