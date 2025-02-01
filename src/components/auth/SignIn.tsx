@@ -3,6 +3,7 @@ import { Form, Input, Button, message } from "antd";
 import { useMutation } from "@tanstack/react-query";
 import { useNavigate, Link } from "react-router-dom";
 import { authApi } from "../../api/auth";
+import bgimage from "../../assets/bgimage.jpg";
 
 const SignIn: React.FC = () => {
   const navigate = useNavigate();
@@ -22,7 +23,12 @@ const SignIn: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center bg-center bg-cover bg-no-repeat bg-fixed bg-opacity-50 bg-black bg-[url(/src/assets/bgImage.jpg)] bg-blend-multiply h-screen w-screen">
+    <div
+      style={{
+        backgroundImage: `url(${bgimage})`,
+      }}
+      className="flex items-center justify-center bg-center bg-cover bg-no-repeat bg-fixed bg-opacity-70 bg-black  bg-blend-multiply h-screen w-screen"
+    >
       <div className="bg-white p-8 w-[400px] rounded-lg shadow-lg">
         <h1 className="text-2xl mb-6">Вход</h1>
         <Form

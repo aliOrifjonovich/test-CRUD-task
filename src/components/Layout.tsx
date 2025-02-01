@@ -68,7 +68,7 @@ const Layout: React.FC = () => {
               style={{ backgroundColor: "#08979C" }}
               onClick={() => setIsModalVisible(true)}
             >
-              Add Company
+              Добавить компания
             </Button>
           </div>
         </div>

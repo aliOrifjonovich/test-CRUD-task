@@ -1,8 +1,9 @@
 import React from "react";
-import { Form, Input, Button, Card, message } from "antd";
+import { Form, Input, Button, message } from "antd";
 import { useMutation } from "@tanstack/react-query";
 import { useNavigate, Link } from "react-router-dom";
 import { authApi } from "../../api/auth";
+import bgimage from "../../assets/bgimage.jpg";
 
 const SignUp: React.FC = () => {
   const navigate = useNavigate();
@@ -26,42 +27,65 @@ const SignUp: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center bg-center bg-cover bg-no-repeat bg-fixed bg-opacity-50 bg-black bg-[url(/src/assets/bgImage.jpg)] bg-blend-multiply h-screen w-screen">
-      <Card className="w-96">
-        <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
-        <Form layout="vertical" onFinish={onFinish} requiredMark={false}>
+    <div
+      style={{
+        backgroundImage: `url(${bgimage})`,
+      }}
+      className="flex items-center justify-center bg-center bg-cover bg-no-repeat bg-fixed bg-opacity-70 bg-black  bg-blend-multiply h-screen w-screen"
+    >
+      <div className="bg-white p-8 w-[400px]">
+        <h1 className="text-2xl mb-6">Регистрация</h1>
+        <Form
+          layout="vertical"
+          onFinish={onFinish}
+          className="space-y-4"
+          requiredMark={false}
+        >
           <Form.Item
-            label="FullName"
+            label="ФИО"
             name="fullName"
-            rules={[{ required: true }]}
+            rules={[{ required: true, message: "Введите ФИО" }]}
           >
-            <Input />
-          </Form.Item>
-          <Form.Item label="Login" name="login" rules={[{ required: true }]}>
-            <Input />
+            <Input
+              placeholder="Введите ФИО"
+              className="h-10 hover:border-gray-300 focus:border-gray-300 focus:shadow-none"
+            />
           </Form.Item>
           <Form.Item
-            label="Password"
-            name="password"
-            rules={[{ required: true, min: 6 }]}
+            label="Логин"
+            name="login"
+            rules={[{ required: true, message: "Введите логин" }]}
           >
-            <Input.Password />
+            <Input
+              placeholder="Введите логин"
+              className="h-10 hover:border-gray-300 focus:border-gray-300 focus:shadow-none"
+            />
           </Form.Item>
-          <Form.Item>
+          <Form.Item
+            label="Пароль"
+            name="password"
+            rules={[{ required: true, message: "Введите пароль" }]}
+          >
+            <Input.Password
+              placeholder="Введите пароль"
+              className="h-10 hover:border-gray-300 focus:border-gray-300 focus:shadow-none"
+            />
+          </Form.Item>
+          <div className="flex justify-between items-center mt-2">
+            <Link to="/signin" className="text-blue-500 hover:text-blue-700">
+              Войти
+            </Link>
             <Button
               type="primary"
               htmlType="submit"
-              block
               loading={mutation.isPending}
+              className="!bg-[#87d068] hover:!bg-[#87d068]/80 border-none"
             >
-              Sign Up
+              Регистрация
             </Button>
-          </Form.Item>
-          <div className="text-center">
-            Already have an account? <Link to="/signin">Sign In</Link>
           </div>
         </Form>
-      </Card>
+      </div>
     </div>
   );
 };
