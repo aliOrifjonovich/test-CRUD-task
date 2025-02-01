@@ -9,7 +9,7 @@ const SignIn: React.FC = () => {
   const navigate = useNavigate();
   const mutation = useMutation({
     mutationFn: authApi.signin,
-    onSuccess: (data) => {
+    onSuccess: () => {
       message.success("Successfully signed in!");
       navigate("/companies");
     },

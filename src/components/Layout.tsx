@@ -3,7 +3,7 @@ import { Layout as AntLayout, Button, Modal } from "antd";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { authApi } from "../api/auth";
-import { PlusOutlined, LogoutOutlined } from "@ant-design/icons";
+import { LogoutOutlined } from "@ant-design/icons";
 import CompanyForm from "./company/CompanyForm";
 
 const { Header, Content } = AntLayout;
